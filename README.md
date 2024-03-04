@@ -10,3 +10,6 @@ Para poder levantar la app, tanto el **frontend** como el **backend** poseen su 
 
 ## Extras
 - En caso de querer cambiar dicho horario de hoy circula, se podría desde migraciones o manualmente, aunque esto último no es recomendable.
+
+## Capturas
+![Captura desde 2024-03-04 11-32-10](https://github.com/Ariannx/Project-Pico-Placa/assets/66506886/1f10304f-cb41-44a5-a180-ae50ffa715c6)
