@@ -1,0 +1,68 @@
+<div class="container mx-auto my-16 px-4 flex justify-center">
+  <div class="container-form bg-gray-100 p-6 rounded-lg shadow-lg w-96">
+    <h1 class="text-center font-bold text-primary-900 text-xl pb-4">Registra tu auto</h1>
+    <form [formGroup]="formGroup" class="mb-8 space-y-4">
+      <div class="plate flex flex-col">
+        <label class="text-base font-bold">Placa*:</label>
+        <input [(ngModel)]="plate" formControlName="plate" [placeholder]="'ABC0001'"
+          class="relative w-full rounded-md bg-white py-1 pl-3 pr- text-left text-secondary-700 shadow-sm ring-1 ring-inset ring-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-400 sm:text-sm sm:leading-6">
+        <div *ngIf="errorMessages['plate']" class="mt-2 text-left text-xs text-error-500">
+          {{errorMessages['plate']}}
+        </div>
+      </div>
+
+      <div class="brand flex flex-col">
+        <label class="text-base font-bold">Marca*:</label>
+        <input [(ngModel)]="brand" formControlName="brand" [placeholder]="'Kia'"
+          class="relative w-full rounded-md bg-white py-1 pl-3 pr-3 text-left text-secondary-700 shadow-sm ring-1 ring-inset ring-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-400 sm:text-sm sm:leading-6">
+        <div *ngIf="errorMessages['brand']" class="mt-2 text-left text-xs text-error-500">
+          {{errorMessages['brand']}}
+        </div>
+      </div>
+
+
+      <div class="model flex flex-col">
+        <label class="text-base font-bold">Modelo*:</label>
+        <input [(ngModel)]="model" formControlName="model" [placeholder]="'Sportage'"
+          class="relative w-full rounded-md bg-white py-1 pl-3 pr-3 text-left text-secondary-700 shadow-sm ring-1 ring-inset ring-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-400 sm:text-sm sm:leading-6">
+        <div *ngIf="errorMessages['model']" class="mt-2 text-left text-xs text-error-500">
+          {{errorMessages['model']}}
+        </div>
+      </div>
+
+
+      <div class="version flex flex-col">
+        <label class="text-base font-bold">Versión*:</label>
+        <input [(ngModel)]="version" formControlName="version" [placeholder]="'V3'"
+          class="relative w-full rounded-md bg-white py-1 pl-3 pr-3 text-left text-secondary-700 shadow-sm ring-1 ring-inset ring-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-400 sm:text-sm sm:leading-6">
+        <div *ngIf="errorMessages['version']" class="mt-2 text-left text-xs text-error-500">
+          {{errorMessages['version']}}
+        </div>
+      </div>
+
+      <div class="year flex flex-col">
+        <label class="text-base font-bold">Año*:</label>
+        <input [(ngModel)]="year" formControlName="year" [placeholder]="'2010'" type="number"
+          class="relative w-full rounded-md bg-white py-1 pl-3 pr-3 text-left text-secondary-700 shadow-sm ring-1 ring-inset ring-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-400 sm:text-sm sm:leading-6">
+        <div *ngIf="errorMessages['year']" class="mt-2 text-left text-xs text-error-500">
+          {{errorMessages['year']}}
+        </div>
+      </div>
+
+      <div class="chasis flex flex-col">
+        <label class="text-base font-bold">Chasis*:</label>
+        <input [(ngModel)]="chasis" formControlName="chasis" [placeholder]="'L3'"
+          class="relative w-full rounded-md bg-white py-1 pl-3 pr-3 text-left text-secondary-700 shadow-sm ring-1 ring-inset ring-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-400 sm:text-sm sm:leading-6">
+        <div *ngIf="errorMessages['chasis']" class="mt-2 text-left text-xs text-error-500">
+          {{errorMessages['chasis']}}
+        </div>
+      </div>
+    </form>
+    <div class="footer flex items-center justify-center">
+      <button (click)="sendVehicleInfo()" type="submit"
+        class="rounded-md text-white bg-primary-600 px-3 py-2 text-sm font-semibold shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-200 block md:inline-block xsm:block w-full md:w-auto xsm:w-full">
+        Registrar
+      </button>
+    </div>
+  </div>
+</div>

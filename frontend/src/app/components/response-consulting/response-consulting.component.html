@@ -1,0 +1,15 @@
+<div class="bg-white p-4">
+  <h2 class="text-center text-secondary-800 font-semibold">Resultado - {{dataModal.plate}}</h2>
+  <mat-dialog-content>
+    <div class="flex flex-col text-secondary-600">
+      <label>Fecha: {{ dataModal.date | date: 'dd/MM/yyyy HH:mm' }}</label>
+      <label>Circula: {{dataModal.canDrive ? 'Sí' : 'No'}}</label>
+      <label>Nota: {{dataModal.message}}</label>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="flex items-center justify-center">
+    <button
+      class="rounded-md text-white bg-primary-600 px-3 py-2 text-sm font-semibold shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-200 block md:inline-block xsm:block w-full md:w-auto xsm:w-full"
+      mat-button mat-dialog-close cdkFocusInitial>Salir</button>
+  </mat-dialog-actions>
+</div>
