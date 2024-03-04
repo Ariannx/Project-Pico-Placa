@@ -1,0 +1,157 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "tsconfig.json"
+    ],
+    "createDefaultProgram": true
+  },
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "plugins": [
+    "filenames",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "airbnb-base"
+  ],
+  "ignorePatterns": [
+    "/dist/",
+    "/node_modules/",
+    "/coverage/"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "camelcase": "warn",
+    "class-methods-use-this": "warn",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/restrict-plus-operands": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/await-thenable": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "PascalCase",
+          "UPPER_CASE",
+          "snake_case"
+        ],
+        "filter": {
+          "regex": "^((es|en)_([A-Z]+))$", // exception for language constants. Ex: es_EC
+          "match": false
+        },
+        "leadingUnderscore": "allow"
+      }
+    ],
+    // TODO: enable this rules
+    //"import/no-unresolved": "off",
+    //"import/extensions": "off",
+    //"consistent-return": "off",
+    // TODO: end
+    "no-unsafe-optional-chaining": "warn",
+    "no-return-assign": "off",
+    "no-shadow": "warn",
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "no-unreachable": "warn",
+    "no-use-before-define": "warn",
+    "no-useless-escape": "warn",
+    "no-loop-func": "warn",
+    "import/no-import-module-exports": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "no-async-promise-executor": "off",
+    "no-return-await": "off",
+    "no-await-in-loop": "off",
+    "prefer-destructuring": "off",
+    "no-param-reassign": "off",
+    "no-promise-executor-return": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "filenames/match-regex": [
+      "error",
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+    ],
+    "filenames/match-exported": [
+      "error",
+      [
+        null,
+        "kebab",
+        "snake"
+      ]
+    ],
+    "implicit-arrow-linebreak": [
+      "error",
+      "below"
+    ],
+    "no-throw-literal": "off",
+    "no-case-declarations": "off"
+  },
+  "overrides": [
+    {
+      "files": "**.ts*",
+      "excludedFiles": "*.test.*",
+      "rules": {
+        "no-magic-numbers": [
+          "warn",
+          {
+            "ignore": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              -1,
+              -2
+            ],
+            "ignoreArrayIndexes": true
+          }
+        ]
+      }
+    },
+    {
+      "files": "**router.ts",
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    },
+    {
+      "files": [
+        "**.test.ts",
+        "src/database/migrations/**.js"
+      ],
+      "rules": {
+        "filenames/match-regex": "off",
+        "@typescript-eslint/unbound-method": "off"
+      }
+    }
+  ]
+}
